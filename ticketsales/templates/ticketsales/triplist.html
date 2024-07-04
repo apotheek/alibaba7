@@ -1,0 +1,25 @@
+{% extends "web/main.html"%}
+    {% block nav %} 
+      <li><a href="/web/trip/details/{{trip.id}}" onclick="showSection('train')">قطار</a></li>
+      <li><a href="#" onclick="showSection('bus')">اتوبوس</a></li>
+      <li><a href="/web/trip/details/{{trip.id}}" onclick="showSection('plane')">هواپیما</a></li>
+      <li><a href="#" onclick="showSection('hotel')">هتل</a></li>
+    {% endblock %}
+
+{% block mainContent %}
+
+      <div class="row">
+        {% if triptlist %}
+          {% for trip in triptlist %}
+          <div class="col-md-3">
+            <a href="/web/trip/details/{{ trip.id }}">
+                <div class="imageBox">
+                    <img src="{{ trip.Poster.url }}" alt="Poster" class="img-fluid" />
+                    <p>{{ trip.name }}</p>
+                </div>
+            </a>
+        </div>        
+          {% endfor %}
+        {% endif %}
+
+{% endblock %}>

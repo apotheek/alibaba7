@@ -1,0 +1,36 @@
+{% extends "web/main.html" %} 
+
+{% block mainContent %}
+<main>
+  <div class="row">
+    {% if tripTime %} 
+        {% for trip in tripTime %}
+    <section id="train" class="section">
+      <h2>اتوبوس</h2>
+      <p>لیست قطارها و جزئیات مربوط به سفرهای ریلی.</p>
+      <div class="col-md-10">
+
+        <h3>ظرفیت:{{ trip.Attribute.Name }}</h3>
+        <h3>{{ trip.TripAttribute.Value }}</h3>
+      </div>
+    </section>
+
+    <section id="bus" class="section">
+      <h2>اتوبوس</h2>
+      <p>لیست اتوبوس‌ها و جزئیات مربوط به سفرهای جاده‌ای.</p>
+    </section>
+
+    <section id="plane" class="section">
+      <h2>هواپیما</h2>
+      <p>لیست پروازها و جزئیات مربوط به سفرهای هوایی.</p>
+    </section>
+
+    <section id="hotel" class="section">
+      <h2>هتل</h2>
+      <p>لیست هتل‌ها و جزئیات مربوط به اقامت.</p>
+    </section>
+    {% endfor %} 
+    {% endif %}
+  </div>
+</main>
+{% endblock %}

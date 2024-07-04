@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه علی بابا</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/fontawesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>علی بابا</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="جستجو کنید...">
+            <button>جستجو</button>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            {% block nav %}
+            <!-- اگر می‌خواهید اینجا بلوک nav را پر کنید -->
+            {% endblock %}
+        </ul>
+    </nav>
+    <main>
+        {% block mainContent %}
+        <!-- اگر می‌خواهید اینجا بلوک mainContent را پر کنید -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 تمامی حقوق محفوظ است.</p>
+    </footer>
+    <script src="{% static 'web/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'web/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'web/js/fontawesome.js' %}"></script>
+    <script src="{% static 'web/js/main.js' %}"></script>
+</body>
+</html>
